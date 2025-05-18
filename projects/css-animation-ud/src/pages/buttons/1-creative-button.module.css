@@ -114,3 +114,62 @@
   letter-spacing: 4px;
   border: 10px solid #e1332d;
 }
+
+/* overlap existing Button */
+.coverBtn {
+  transition: color 1s;
+}
+.coverBtn::before {
+  content: "Hello";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  /* z-index: -1; 因为需要覆盖，所以去掉这个属性 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: purple;
+  transform: translateY(-100%);
+  transform-origin: left bottom;
+  transition: transform 1s ease;
+}
+.coverBtn:hover {
+  color: white;
+}
+
+.coverBtn:hover::before {
+  transform: translateY(0%);
+}
+
+/* slant sliding button */
+.slantSlidingBtn {
+  background-color: black;
+  color: white;
+  transition: background-color 2s;
+  /* overflow: visible !important; */
+}
+.slantSlidingBtn::before {
+  content: "";
+  position: absolute;
+  /* z-index: -1; 因为需要覆盖，所以去掉这个属性 */
+  /* key property */
+  top: -30px;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background-color: #f2f2d2;
+  /* key property:可以同时设置两个Transform */
+  transform: translateX(-100%) rotate(45deg);
+  /* key property */
+  transform-origin: left top;
+  transition: transform 2s ease;
+}
+.slantSlidingBtn:hover {
+  background-color: red;
+}
+
+.slantSlidingBtn:hover::before {
+  transform: translateX(100%) rotate(45deg);
+}

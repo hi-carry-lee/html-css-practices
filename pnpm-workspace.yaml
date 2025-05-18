@@ -1,0 +1,4 @@
+packages:
+  - "projects/*"
+  - "projects/*/*" # 添加这一行来包含子项目
+  - "projects/**" # **可以匹配任意嵌套的子目录

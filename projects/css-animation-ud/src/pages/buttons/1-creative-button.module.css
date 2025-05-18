@@ -1,0 +1,116 @@
+.btn {
+  font-size: 20px;
+  font-family: sans-serif;
+  padding: 20px 40px;
+  border: 2px solid black;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* rotate button */
+.rotateBtn::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: yellow;
+  transform: rotate(-90deg);
+  transform-origin: left bottom;
+  transition: transform 1s ease;
+}
+
+.rotateBtn:hover::before {
+  transform: rotate(0deg);
+}
+
+/* swipe button */
+.swipeBtn {
+  transition: color 1s ease;
+}
+
+.swipeBtn::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: purple;
+  transform: translateX(-100%);
+  transform-origin: left bottom;
+  transition: transform 1s ease;
+}
+
+.swipeBtn:hover::before {
+  transform: translateX(0);
+}
+.swipeBtn:hover {
+  color: white;
+}
+
+/* center to surrounding */
+.centerToSurroundingBtn {
+  transition: color 1s ease;
+}
+
+.centerToSurroundingBtn::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: purple;
+  transform: rotateX(90deg);
+  transition: transform 1s ease;
+}
+.centerToSurroundingBtn::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: purple;
+  transform: rotateY(90deg);
+  transition: transform 1s ease;
+}
+
+.centerToSurroundingBtn:hover::before {
+  transform: rotateX(0deg);
+}
+.centerToSurroundingBtn:hover::after {
+  transform: rotateY(0deg);
+}
+.centerToSurroundingBtn:hover {
+  color: white;
+}
+
+/* Stretching Button */
+.buttonWrapper {
+  width: 400px; /* 或使用 min-width: 200px; */
+  height: 100px; /* 或使用 min-height: 100px; */
+  display: flex;
+  justify-content: center; /* 按钮水平居中 */
+  align-items: center; /* 按钮垂直居中 */
+  padding: 10px;
+}
+.stretchingBtn {
+  linefont-weight: 300;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  transition: all 1s;
+}
+
+.stretchingBtn:hover {
+  font-weight: 900;
+  letter-spacing: 4px;
+  border: 10px solid #e1332d;
+}
